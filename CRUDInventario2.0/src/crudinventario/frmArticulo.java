@@ -85,15 +85,29 @@ public class frmArticulo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Articulos"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Añadir Articulo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12))); // NOI18N
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel1.setText("Codigo");
 
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel2.setText("Descripcion");
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel3.setText("Precio");
 
-        btnGuardar.setText("Guardar");
+        txtcodigo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtcodigo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtdescripcion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtdescripcion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtprecio.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtprecio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnGuardar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        btnGuardar.setText(" Guardar ");
+        btnGuardar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -117,7 +131,7 @@ public class frmArticulo extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtdescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                                 .addComponent(txtcodigo)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,13 +153,21 @@ public class frmArticulo extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Consulta de Articulos"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Consulta de Articulos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12))); // NOI18N
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel4.setText("Nombre del codigo");
 
+        txtID.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnBuscar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
 
+        lstArticulo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lstArticulo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lstArticulo.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -164,7 +186,7 @@ public class frmArticulo extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -184,21 +206,34 @@ public class frmArticulo extends javax.swing.JFrame {
                             .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnBuscar))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Actualizacion de Articulos"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Actualizacion de Articulos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12))); // NOI18N
 
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel5.setText("Codigo");
 
+        txtcodigo1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtcodigo1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel6.setText("Descripcion");
 
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel7.setText("Precio");
 
+        txtdescripcion1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtdescripcion1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        txtprecio1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        txtprecio1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtprecio1.addActionListener(this::txtprecio1ActionPerformed);
 
+        btnActualizar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnActualizar.setText("Actulaizar");
+        btnActualizar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnActualizar.addActionListener(this::btnActualizarActionPerformed);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -243,21 +278,29 @@ public class frmArticulo extends javax.swing.JFrame {
                 .addGap(34, 34, 34))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Eliminar Articulo"));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Eliminar Articulo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Comic Sans MS", 0, 12))); // NOI18N
 
+        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel8.setText("Codigo");
 
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel9.setText("Descripcion");
 
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jLabel10.setText("Precio");
 
+        lblCodigo.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblCodigo.setText("jLabel11");
 
+        lblDescripcion.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblDescripcion.setText("jLabel12");
 
+        lblPrecio.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         lblPrecio.setText("jLabel13");
 
+        btnEliminar.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnEliminar.addActionListener(this::btnEliminarActionPerformed);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -303,7 +346,7 @@ public class frmArticulo extends javax.swing.JFrame {
                     .addComponent(lblPrecio))
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jmImportar.setText("Archivo");
@@ -335,9 +378,9 @@ public class frmArticulo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(44, 44, 44)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -352,11 +395,11 @@ public class frmArticulo extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -537,32 +580,51 @@ public class frmArticulo extends javax.swing.JFrame {
         documento.add(new Paragraph("Reporte Gerencial de Inventario - Taller 360"));
         documento.add(new Paragraph(" "));
 
-        PdfPTable tabla = new PdfPTable(3);
+        // Ahora son 4 columnas
+        PdfPTable tabla = new PdfPTable(4);
 
         tabla.addCell("CÓDIGO");
         tabla.addCell("DESCRIPCIÓN");
         tabla.addCell("PRECIO ($)");
+        tabla.addCell("ESTADO");
 
-        // ==========================================
-        // AQUÍ LEEMOS EL TXT (igual que en tu JSON)
-        // ==========================================
         BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
         String linea;
+
+        double total = 0; // acumulador del total
 
         while ((linea = br.readLine()) != null) {
             String[] datos = linea.split("\\|");
 
             if (datos.length >= 3) {
-                // Agregamos directamente a la tabla
-                tabla.addCell(datos[0]); // Código
-                tabla.addCell(datos[1]); // Descripción
-                tabla.addCell(datos[2]); // Precio
+                String codigo = datos[0];
+                String descripcion = datos[1];
+                double precio = Double.parseDouble(datos[2]);
+
+                // SUMAMOS al total
+                total += precio;
+
+                // Generamos estado random
+                String estado = (Math.random() < 0.5) ? "Disponible" : "Agotado";
+
+                // Agregamos a la tabla
+                tabla.addCell(codigo);
+                tabla.addCell(descripcion);
+                tabla.addCell("$" + precio);
+                tabla.addCell(estado);
             }
         }
 
         br.close();
 
         documento.add(tabla);
+
+        // ==========================
+        // TOTAL FINAL
+        // ==========================
+        documento.add(new Paragraph(" "));
+        documento.add(new Paragraph("TOTAL DEL INVENTARIO: $" + total));
+
         documento.close();
 
         JOptionPane.showMessageDialog(this, "¡PDF generado con éxito en la carpeta del proyecto!");
@@ -570,7 +632,7 @@ public class frmArticulo extends javax.swing.JFrame {
     } catch (Exception e) {
         System.out.println("Error al generar el PDF: " + e.getMessage());
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-     }
+        }
     }//GEN-LAST:event_jmiGenerarPDFActionPerformed
          
     /**
