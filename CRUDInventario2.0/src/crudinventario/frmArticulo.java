@@ -13,6 +13,11 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 
 /**
  *
@@ -75,6 +80,7 @@ public class frmArticulo extends javax.swing.JFrame {
         jmImportar = new javax.swing.JMenu();
         jmiImportar = new javax.swing.JMenuItem();
         jmiExportar = new javax.swing.JMenuItem();
+        jmiGenerarPDF = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -311,6 +317,10 @@ public class frmArticulo extends javax.swing.JFrame {
         jmiExportar.addActionListener(this::jmiExportarActionPerformed);
         jmImportar.add(jmiExportar);
 
+        jmiGenerarPDF.setText("Generar PDF");
+        jmiGenerarPDF.addActionListener(this::jmiGenerarPDFActionPerformed);
+        jmImportar.add(jmiGenerarPDF);
+
         jMenuBar1.add(jmImportar);
 
         jMenu2.setText("Informacion");
@@ -515,6 +525,53 @@ public class frmArticulo extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jmiExportarActionPerformed
+
+    private void jmiGenerarPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiGenerarPDFActionPerformed
+        // 1. Instanciamos el documento (La "hoja" en blanco)
+    Document documento = new Document();
+
+    try {
+        PdfWriter.getInstance(documento, new FileOutputStream("Reporte_Inventario.pdf"));
+        documento.open();
+
+        documento.add(new Paragraph("Reporte Gerencial de Inventario - Taller 360"));
+        documento.add(new Paragraph(" "));
+
+        PdfPTable tabla = new PdfPTable(3);
+
+        tabla.addCell("CÓDIGO");
+        tabla.addCell("DESCRIPCIÓN");
+        tabla.addCell("PRECIO ($)");
+
+        // ==========================================
+        // AQUÍ LEEMOS EL TXT (igual que en tu JSON)
+        // ==========================================
+        BufferedReader br = new BufferedReader(new FileReader("listado_articulos.txt"));
+        String linea;
+
+        while ((linea = br.readLine()) != null) {
+            String[] datos = linea.split("\\|");
+
+            if (datos.length >= 3) {
+                // Agregamos directamente a la tabla
+                tabla.addCell(datos[0]); // Código
+                tabla.addCell(datos[1]); // Descripción
+                tabla.addCell(datos[2]); // Precio
+            }
+        }
+
+        br.close();
+
+        documento.add(tabla);
+        documento.close();
+
+        JOptionPane.showMessageDialog(this, "¡PDF generado con éxito en la carpeta del proyecto!");
+
+    } catch (Exception e) {
+        System.out.println("Error al generar el PDF: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+     }
+    }//GEN-LAST:event_jmiGenerarPDFActionPerformed
          
     /**
      * @param args the command line arguments
@@ -565,6 +622,7 @@ public class frmArticulo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu jmImportar;
     private javax.swing.JMenuItem jmiExportar;
+    private javax.swing.JMenuItem jmiGenerarPDF;
     private javax.swing.JMenuItem jmiImportar;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDescripcion;
