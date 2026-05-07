@@ -69,6 +69,12 @@ public class frmCliente extends javax.swing.JFrame {
         lblNoCliente = new javax.swing.JLabel();
         lblRazonSocial = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmImportar = new javax.swing.JMenuItem();
+        jmiExportar = new javax.swing.JMenuItem();
+        jmiGenerarPDF = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -314,6 +320,25 @@ public class frmCliente extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        jMenu1.setText("Archivo");
+
+        jmImportar.setText("Importar CSV");
+        jmImportar.addActionListener(this::jmImportarActionPerformed);
+        jMenu1.add(jmImportar);
+
+        jmiExportar.setText("Exportar JSON");
+        jMenu1.add(jmiExportar);
+
+        jmiGenerarPDF.setText("Exportar PDF");
+        jMenu1.add(jmiGenerarPDF);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Informacion");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -437,6 +462,19 @@ public class frmCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void jmImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmImportarActionPerformed
+         int respuesta = JOptionPane.showConfirmDialog(this,
+                "Es importante que el archivo a importar tenga el nombre " + 
+                    "Clientes.csv y se encuentra en la raiz del proyecto",
+                "Importanción de Datos desde el archivo CSV",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(respuesta == JOptionPane.YES_OPTION){
+            clsCSV cCsv = new clsCSV();
+            cCsv.importarClientes();
+        }
+    }//GEN-LAST:event_jmImportarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -480,12 +518,18 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JMenuItem jmImportar;
+    private javax.swing.JMenuItem jmiExportar;
+    private javax.swing.JMenuItem jmiGenerarPDF;
     private javax.swing.JLabel lblNoCliente;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblRazonSocial;
